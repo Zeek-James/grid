@@ -229,7 +229,6 @@ input:checked + .tcg__Container .tcg__grid {
   grid-column: span 4;
   grid-row: span 3;
 }
-
 .mosaic__Container {
   transform: rotateZ(45deg) scale(0.7);
 }
@@ -237,11 +236,36 @@ input:checked + .tcg__Container .tcg__grid {
 .ga__Container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-auto-rows: minmax(150px, auto);
+  grid-auto-rows: minmax(100px, auto);
   max-width: 960px;
   margin: 0 auto;
   gap: 10px;
-  grid-template-areas: "header header header";
+  grid-template-areas:
+    "header header header header"
+    "footer footer footer footer"
+    "main main main main"
+    "main main main main"
+    "aside aside nav nav"
+    "section section section section"
+    "section section section section";
+}
+
+@media screen and (min-width: 760px) {
+  .ga__Container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: minmax(100px, auto);
+    max-width: 960px;
+    margin: 0 auto;
+    gap: 10px;
+    grid-template-areas:
+      "header header header header"
+      "aside . main main"
+      "nav . main main"
+      "section section section section"
+      "section section section section"
+      "footer footer footer footer";
+  }
 }
 
 .ga__Container > * {
@@ -253,26 +277,26 @@ input:checked + .tcg__Container .tcg__grid {
   background-color: #3bbced;
 } */
 
-header {
+.ga__Container header {
   grid-area: header;
 }
 
-main {
+.ga__Container main {
   grid-area: main;
 }
 
-section {
+.ga__Container section {
   grid-area: section;
 }
 
-aside {
+.ga__Container aside {
   grid-area: aside;
 }
 
-nav {
+.ga__Container nav {
   grid-area: nav;
 }
 
-footer {
+.ga__Container footer {
   grid-area: footer;
 }
