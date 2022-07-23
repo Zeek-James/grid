@@ -300,3 +300,157 @@ input:checked + .tcg__Container .tcg__grid {
 .ga__Container footer {
   grid-area: footer;
 }
+
+.resGrid__Container {
+  display: grid;
+  gap: 1rem;
+  /* grid-template-columns: repeat(12, 1fr); */
+
+  /* Implicit Grid */
+  /* auto fill or auto fit */
+  /* grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); */
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-auto-rows: minmax(240px, auto);
+}
+
+.resGrid__Container > * {
+  display: grid;
+  background-color: #333;
+  align-items: center;
+}
+
+.resGrid__Container :nth-child(even) {
+  background-color: #3bbced;
+}
+
+.animated__Grid {
+  display: grid;
+  height: 85vh;
+  gap: 1rem;
+
+  /* Explicit Grid */
+  grid-template-areas:
+    "a b c d"
+    "l main main e"
+    "k main main f"
+    "j i h g";
+
+  grid-template-rows: repeat(4, 25%);
+  grid-template-columns: 240px auto auto 240px;
+  --stagger-delay: 100ms;
+}
+
+@keyframes cardEntrance {
+  from {
+    opacity: 0;
+    transform: scale(0.3);
+    filter: hue-rotate(180deg);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+    filter: hue-rotate(0deg);
+  }
+}
+
+.animated__Grid > * {
+  background-color: #3bbced;
+}
+
+.card {
+  animation: cardEntrance 700ms ease-out;
+  animation-fill-mode: backwards;
+}
+
+.animated__Grid :nth-child(1) {
+  grid-area: a;
+  background-image: url("https://images.pexels.com/photos/12842811/pexels-photo-12842811.jpeg?auto=compress&cs=tinysrgb&w=400&lazy=load");
+
+  animation-delay: calc(1 * var(--stagger-delay));
+}
+
+.animated__Grid :nth-child(2) {
+  grid-area: b;
+  background-image: url("https://images.pexels.com/photos/12455517/pexels-photo-12455517.jpeg?auto=compress&cs=tinysrgb&w=400&lazy=load");
+
+  animation-delay: calc(2 * var(--stagger-delay));
+}
+
+.animated__Grid :nth-child(3) {
+  grid-area: c;
+  background-image: url("https://images.pexels.com/photos/12485293/pexels-photo-12485293.jpeg?auto=compress&cs=tinysrgb&w=400&lazy=load");
+
+  animation-delay: calc(3 * var(--stagger-delay));
+}
+
+.animated__Grid :nth-child(4) {
+  grid-area: d;
+  background-image: url("https://images.pexels.com/photos/12652637/pexels-photo-12652637.jpeg?auto=compress&cs=tinysrgb&w=400&lazy=load");
+
+  animation-delay: calc(4 * var(--stagger-delay));
+}
+
+.animated__Grid :nth-child(5) {
+  grid-area: e;
+  background-image: url("https://www.pexels.com/photo/concrete-building-with-arches-and-glass-windows-12879613/");
+
+  animation-delay: calc(5 * var(--stagger-delay));
+}
+
+.animated__Grid :nth-child(6) {
+  grid-area: f;
+  background-image: url("https://images.pexels.com/photos/12744083/pexels-photo-12744083.jpeg?auto=compress&cs=tinysrgb&w=400&lazy=load");
+
+  animation-delay: calc(6 * var(--stagger-delay));
+}
+
+.animated__Grid :nth-child(7) {
+  grid-area: g;
+  background-image: url("https://images.pexels.com/photos/12896240/pexels-photo-12896240.jpeg?auto=compress&cs=tinysrgb&w=400&lazy=load");
+
+  animation-delay: calc(7 * var(--stagger-delay));
+}
+
+.animated__Grid :nth-child(8) {
+  grid-area: h;
+  background-image: url("https://images.pexels.com/photos/11250806/pexels-photo-11250806.jpeg?auto=compress&cs=tinysrgb&w=400&lazy=load");
+
+  animation-delay: calc(8 * var(--stagger-delay));
+}
+
+.animated__Grid :nth-child(9) {
+  grid-area: i;
+  background-image: url("https://images.pexels.com/photos/12531215/pexels-photo-12531215.jpeg?auto=compress&cs=tinysrgb&w=400&lazy=load");
+
+  animation-delay: calc(9 * var(--stagger-delay));
+}
+
+.animated__Grid :nth-child(10) {
+  grid-area: j;
+  background-image: url("https://images.pexels.com/photos/12461867/pexels-photo-12461867.jpeg?auto=compress&cs=tinysrgb&w=400&lazy=load");
+
+  animation-delay: calc(10 * var(--stagger-delay));
+}
+
+.animated__Grid :nth-child(11) {
+  grid-area: k;
+  background-image: url("https://images.pexels.com/photos/10673160/pexels-photo-10673160.jpeg?auto=compress&cs=tinysrgb&w=400&lazy=load");
+
+  animation-delay: calc(11 * var(--stagger-delay));
+}
+
+.animated__Grid :nth-child(12) {
+  grid-area: l;
+  background-image: url("https://images.pexels.com/photos/12576758/pexels-photo-12576758.jpeg?auto=compress&cs=tinysrgb&w=400&lazy=load");
+
+  animation-delay: calc(12 * var(--stagger-delay));
+}
+
+.animated__Grid :last-child {
+  animation-delay: calc(13 * var(--stagger-delay));
+
+  background-image: url("https://images.pexels.com/photos/12616283/pexels-photo-12616283.jpeg?auto=compress&cs=tinysrgb&w=400&lazy=load");
+
+  grid-area: main;
+}
